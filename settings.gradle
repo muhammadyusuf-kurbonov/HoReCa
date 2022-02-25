@@ -16,4 +16,6 @@ rootProject.name = "HoReCa"
 include ':app'
 include ':common'
 include ':features'
-include ':features:home'
+include ':features:hotels'
+include ':features:restaurants'
+include ':features:cafes'

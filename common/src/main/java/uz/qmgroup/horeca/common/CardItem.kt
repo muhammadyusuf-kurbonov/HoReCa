@@ -1,19 +1,17 @@
 package uz.qmgroup.horeca.common
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.*
-import androidx.compose.material3.CardDefaults.elevatedCardElevation
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ItemCard(
     modifier: Modifier = Modifier,
@@ -26,19 +24,20 @@ fun ItemCard(
     Card(
         modifier = modifier,
         shape = RoundedCornerShape(16.dp),
-        elevation = elevatedCardElevation(defaultElevation = 8.dp),
-        containerColor = MaterialTheme.colorScheme.primaryContainer,
+        elevation = 8.dp
     ) {
         Row(modifier = Modifier
             .padding(16.dp)
             .height(IntrinsicSize.Min)) {
+
             Column(modifier = Modifier.weight(1f)) {
-                Box {
+                Box(modifier = Modifier.padding(bottom = 4.dp)) {
                     Image(
                         painter = image,
                         contentDescription = title,
                         modifier = Modifier
                             .aspectRatio(1f)
+                            .shadow(4.dp, shape = RoundedCornerShape(16.dp))
                     )
                     if (rating != null)
                         RatingMark(rating = rating)
@@ -46,14 +45,16 @@ fun ItemCard(
 
                 Text(
                     text = title,
-                    style = MaterialTheme.typography.titleLarge,
+                    style = MaterialTheme.typography.subtitle1,
                     fontWeight = FontWeight.Bold
                 )
 
-                Text(text = subTitle, style = MaterialTheme.typography.labelLarge)
+                CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.disabled) {
+                    Text(text = subTitle, style = MaterialTheme.typography.caption)
+                }
             }
+
             Surface(
-                color = MaterialTheme.colorScheme.primaryContainer,
                 modifier = Modifier.weight(1f)
             ) {
                 Column(modifier = Modifier.weight(1f)) {

@@ -1,0 +1,3 @@
+android {
+    namespace 'uz.qmgroup.horeca.cafes'
+}

@@ -1,23 +1,24 @@
 package uz.qmgroup.horeca.layouts
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material3.*
-import androidx.compose.material3.TopAppBarDefaults.centerAlignedTopAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 import uz.qmgroup.horeca.MainViewModel
-import uz.qmgroup.horeca.home.HomeScreen
+import uz.qmgroup.horeca.R
+import uz.qmgroup.horeca.ui.screens.HomeScreen
 import uz.qmgroup.horeca.ui.theme.HoReCaTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppLayout(
     modifier: Modifier = Modifier
@@ -31,17 +32,27 @@ fun AppLayout(
             scope.launch { drawerState.open() }
         }
 
-        NavigationDrawer(drawerContent = { AppDrawer() }, drawerState = viewModel.drawerState) {
+        ModalDrawer(drawerContent = { AppDrawer() }, drawerState = viewModel.drawerState) {
             Column(modifier = modifier) {
-                CenterAlignedTopAppBar(
+                TopAppBar(
+                    backgroundColor = MaterialTheme.colors.background,
+                    contentColor = MaterialTheme.colors.primary,
                     title = {
-                        Text(
-                            text = "HoReCa Uzbekistan",
-                            style = MaterialTheme.typography.titleMedium,
-                        )
+                        Column(
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.mipmap.ic_launcher_foreground),
+                                contentDescription = "",
+                                modifier = Modifier
+                                    .align(Alignment.CenterHorizontally)
+                                    .fillMaxWidth(.6f)
+                                    .aspectRatio(1f)
+                            )
+                        }
                     },
                     actions = {
-                        IconButton(onClick = {  }) {
+                        IconButton(onClick = { }) {
                             Icon(
                                 imageVector = Icons.Default.Search,
                                 contentDescription = "Search",
@@ -55,15 +66,10 @@ fun AppLayout(
                                 contentDescription = "Menu",
                             )
                         }
-                    },
-                    colors = centerAlignedTopAppBarColors(
-                        titleContentColor = MaterialTheme.colorScheme.tertiary,
-                        navigationIconContentColor = MaterialTheme.colorScheme.primary,
-                        actionIconContentColor = MaterialTheme.colorScheme.primary
-                    )
+                    }
                 )
 
-                HomeScreen(modifier = Modifier.fillMaxSize())
+                HomeScreen(modifier = Modifier.fillMaxSize().padding(0.dp, 8.dp))
             }
         }
     }
