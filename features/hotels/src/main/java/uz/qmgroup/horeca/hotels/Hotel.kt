@@ -11,6 +11,7 @@ data class Hotel(
     val comment: String = "",
     val abilities: List<String> = emptyList(),
     val imageUrl: String = "",
-    val wifi: Boolean,
-    val restaurant: Boolean = false
+    val wifi: Boolean = true,
+    val restaurant: Boolean = false,
+    val pool: Boolean = false
 )

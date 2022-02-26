@@ -7,10 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Explore
 import androidx.compose.material.icons.outlined.LocationOn
-import androidx.compose.material.icons.rounded.Restaurant
-import androidx.compose.material.icons.rounded.Star
-import androidx.compose.material.icons.rounded.StarBorder
-import androidx.compose.material.icons.rounded.Wifi
+import androidx.compose.material.icons.rounded.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -107,6 +104,10 @@ fun HotelCard(
                         FeatureIcon(
                             icon = rememberVectorPainter(image = Icons.Rounded.Restaurant),
                             enabled = hotel.restaurant
+                        )
+                        FeatureIcon(
+                            icon = rememberVectorPainter(image = Icons.Rounded.Pool),
+                            enabled = hotel.pool
                         )
                     }
 
