@@ -4,10 +4,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 import uz.qmgroup.horeca.ui.screens.HomeScreen
 import uz.qmgroup.horeca.ui.theme.HoReCaTheme
@@ -19,6 +17,9 @@ fun AppLayout(
     HoReCaTheme {
         val scaffoldState = rememberScaffoldState()
         val scope = rememberCoroutineScope()
+        var currentPage by remember {
+            mutableStateOf("hotels")
+        }
 
         Scaffold(
             modifier = modifier,
@@ -27,14 +28,13 @@ fun AppLayout(
                 AppTopBar(openDrawer = { scope.launch { scaffoldState.drawerState.open() } })
             },
             bottomBar = {
-
+                AppBottomBar(currentPage = currentPage, navigate = { currentPage = it })
             },
             drawerContent = { AppDrawer() },
         ) {
             HomeScreen(modifier = Modifier
                 .fillMaxSize()
-                .padding(it)
-                .padding(0.dp, 8.dp))
+                .padding(it))
         }
     }
 }
