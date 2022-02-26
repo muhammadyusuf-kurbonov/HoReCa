@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.hotels.sections
+package uz.qmgroup.horeca.hotels
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme

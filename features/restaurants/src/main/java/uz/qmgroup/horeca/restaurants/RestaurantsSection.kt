@@ -1,18 +1,11 @@
 package uz.qmgroup.horeca.restaurants
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import uz.qmgroup.horeca.common.components.ItemsSection
 
 val restaurants = listOf(
     Restaurant(
@@ -43,38 +36,20 @@ val restaurants = listOf(
 @Composable
 fun RestaurantsSection(
     modifier: Modifier = Modifier,
+    navigateToAll: () -> Unit,
 ) {
     RestaurantsTheme {
-        Column(modifier = modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(2.dp)) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-            ) {
-                Text(
-                    text = "Restaurants",
-                    style = MaterialTheme.typography.subtitle1,
-                    fontWeight = FontWeight.Bold
-                )
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        text = "All",
-                        style = MaterialTheme.typography.subtitle1,
-                    )
-                    Icon(imageVector = Icons.Default.KeyboardArrowRight, contentDescription = "")
-                }
-            }
-
-            LazyRow(modifier = Modifier.fillMaxWidth()) {
+        ItemsSection(
+            modifier = modifier,
+            title = "Restaurants",
+            navigateToAll = navigateToAll,
+            items = {
                 items(restaurants) {
                     RestaurantCard(
                         restaurant = it,
-                        modifier = Modifier.
-                        width(360.dp)
+                        modifier = Modifier.width(360.dp)
                     )
                 }
-            }
-        }
+            })
     }
 }
