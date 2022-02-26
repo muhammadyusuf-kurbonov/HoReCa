@@ -13,5 +13,6 @@ data class Hotel(
     val imageUrl: String = "",
     val wifi: Boolean = true,
     val restaurant: Boolean = false,
-    val pool: Boolean = false
+    val pool: Boolean = false,
+    val gym: Boolean = false
 )

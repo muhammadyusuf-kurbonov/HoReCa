@@ -46,7 +46,8 @@ val hotels = listOf(
         address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
         price = 120f,
         wifi = false,
-        restaurant = true
+        restaurant = true,
+        gym = true
     )
 )
 

@@ -106,6 +106,10 @@ fun HotelCard(
                             enabled = hotel.restaurant
                         )
                         FeatureIcon(
+                            icon = rememberVectorPainter(image = Icons.Rounded.FitnessCenter),
+                            enabled = hotel.gym
+                        )
+                        FeatureIcon(
                             icon = rememberVectorPainter(image = Icons.Rounded.Pool),
                             enabled = hotel.pool
                         )
