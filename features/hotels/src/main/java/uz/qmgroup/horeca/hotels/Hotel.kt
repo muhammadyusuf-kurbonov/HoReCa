@@ -1,6 +1,7 @@
 package uz.qmgroup.horeca.hotels
 
 data class Hotel(
+    val id: Long = 0,
     val title: String = "",
     val city: String = "",
     val stars: Int = 0,

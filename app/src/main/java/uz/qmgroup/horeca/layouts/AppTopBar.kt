@@ -20,7 +20,7 @@ import uz.qmgroup.horeca.R
 @Composable
 fun AppTopBar(
     modifier: Modifier = Modifier,
-    openDrawer: () -> Unit
+    openDrawer: () -> Unit,
 ) {
     TopAppBar(
         modifier = modifier,

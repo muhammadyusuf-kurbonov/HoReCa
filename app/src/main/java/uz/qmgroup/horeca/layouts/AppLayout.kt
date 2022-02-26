@@ -6,8 +6,9 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import com.ramcosta.composedestinations.DestinationsNavHost
 import kotlinx.coroutines.launch
-import uz.qmgroup.horeca.ui.screens.HomeScreen
+import uz.qmgroup.horeca.ui.screens.NavGraphs
 import uz.qmgroup.horeca.ui.theme.HoReCaTheme
 
 @Composable
@@ -32,9 +33,11 @@ fun AppLayout(
             },
             drawerContent = { AppDrawer() },
         ) {
-            HomeScreen(modifier = Modifier
+            DestinationsNavHost(modifier = Modifier
                 .fillMaxSize()
-                .padding(it))
+                .padding(it),
+                navGraph = NavGraphs.root
+            )
         }
     }
 }
