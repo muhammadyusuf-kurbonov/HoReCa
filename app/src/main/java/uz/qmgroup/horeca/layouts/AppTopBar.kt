@@ -1,6 +1,7 @@
 package uz.qmgroup.horeca.layouts
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,11 +17,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import uz.qmgroup.horeca.R
+import uz.qmgroup.horeca.ui.screens.destinations.DirectionDestination
+import uz.qmgroup.horeca.ui.screens.destinations.HomeScreenDestination
+import uz.qmgroup.horeca.ui.screens.destinations.SearchScreenDestination
 
 @Composable
 fun AppTopBar(
     modifier: Modifier = Modifier,
     openDrawer: () -> Unit,
+    navigateTo: (DirectionDestination) -> Unit
 ) {
     TopAppBar(
         modifier = modifier,
@@ -37,11 +42,14 @@ fun AppTopBar(
                         .align(Alignment.CenterHorizontally)
                         .fillMaxWidth(.6f)
                         .aspectRatio(1f)
+                        .clickable {
+                            navigateTo(HomeScreenDestination)
+                        }
                 )
             }
         },
         actions = {
-            IconButton(onClick = { }) {
+            IconButton(onClick = { navigateTo(SearchScreenDestination) }) {
                 Icon(
                     imageVector = Icons.Default.Search,
                     contentDescription = "Search",

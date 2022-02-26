@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
@@ -24,7 +25,10 @@ fun AppBottomBarIcon(
     var text by remember { mutableStateOf("") }
     text = if (selected) expandedText else shortText
     AnimatedContent(targetState = text) { targetText ->
-        Surface(color = color, shape = RoundedCornerShape(99.dp), modifier = modifier) {
+        Surface(color = color, shape = RoundedCornerShape(99.dp), modifier = Modifier
+            .clip(RoundedCornerShape(99.dp))
+            .then(modifier)
+        ) {
             Text(
                 text = targetText,
                 style = MaterialTheme.typography.subtitle1,

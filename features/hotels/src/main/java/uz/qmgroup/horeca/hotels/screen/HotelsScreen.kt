@@ -14,7 +14,8 @@ import uz.qmgroup.horeca.hotels.components.HotelCard
 @Composable
 fun HotelsScreen(
     modifier: Modifier = Modifier,
-    hotelsViewModel: HotelsViewModel = viewModel()
+    hotelsViewModel: HotelsViewModel = viewModel(),
+    navigateToMain: () -> Unit
 ) {
     HotelsTheme {
         ItemsScreen(
@@ -22,6 +23,7 @@ fun HotelsScreen(
             title = "Hotels",
             mainImage = painterResource(id = R.mipmap.img_hilton),
             hotelsViewModel = hotelsViewModel,
+            navigateBack = navigateToMain,
             renderItem = {
                 HotelCard(
                     hotel = it,

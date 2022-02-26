@@ -1,5 +1,6 @@
 package uz.qmgroup.horeca.common.components
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -25,10 +26,15 @@ fun <E> ItemsScreen(
     title: String,
     mainImage: Painter,
     hotelsViewModel: BaseViewModel<E>,
+    navigateBack: () -> Unit,
     renderItem: @Composable (item: E) -> Unit
 ) {
     LaunchedEffect(key1 = Unit) {
         hotelsViewModel.loadPreviewData()
+    }
+
+    BackHandler {
+        navigateBack()
     }
 
     LazyColumn(modifier = modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {

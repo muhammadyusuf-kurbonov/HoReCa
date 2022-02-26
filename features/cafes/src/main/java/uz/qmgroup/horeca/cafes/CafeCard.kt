@@ -17,7 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.transform.RoundedCornersTransformation
-import uz.qmgroup.horeca.common.ItemCard
+import uz.qmgroup.horeca.common.components.ItemCard
 import java.text.DateFormat
 import java.util.*
 
@@ -37,7 +37,8 @@ fun formatWorkingTime(workingTime: Pair<Hour, Hour>): String {
 @Composable
 fun CafeCard(
     modifier: Modifier = Modifier,
-    cafe: Cafe
+    cafe: Cafe,
+    onClick: () -> Unit = {}
 ) {
     val image = cafe.imageUrl.ifEmpty { R.drawable.restaurant }
 
@@ -49,6 +50,7 @@ fun CafeCard(
         subTitle = cafe.city,
         modifier = modifier.padding(8.dp),
         rating = cafe.rating,
+        onClick = onClick,
         additionalData = {
             Column(
                 verticalArrangement = Arrangement.SpaceBetween,

@@ -16,6 +16,7 @@ import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import uz.qmgroup.horeca.cafes.CafesSection
 import uz.qmgroup.horeca.hotels.HotelsSection
 import uz.qmgroup.horeca.restaurants.RestaurantsSection
+import uz.qmgroup.horeca.ui.screens.destinations.CafesListDestination
 import uz.qmgroup.horeca.ui.screens.destinations.HotelsListDestination
 import uz.qmgroup.horeca.ui.screens.destinations.RestaurantsListDestination
 
@@ -42,9 +43,6 @@ fun HomeScreen(
         }
         item {
             HotelsSection(
-                navigate = {
-//                navigator.navigate()
-                },
                 navigateToAll = {
                     navigator.navigate(HotelsListDestination)
                 })
@@ -56,7 +54,7 @@ fun HomeScreen(
         }
         item {
             CafesSection(navigateToAll = {
-
+                navigator.navigate(CafesListDestination)
             })
         }
     }

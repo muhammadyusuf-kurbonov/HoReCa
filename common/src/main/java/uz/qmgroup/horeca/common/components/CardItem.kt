@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.common
+package uz.qmgroup.horeca.common.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -11,7 +11,9 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import uz.qmgroup.horeca.common.RatingMark
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun ItemCard(
     modifier: Modifier = Modifier,
@@ -19,12 +21,14 @@ fun ItemCard(
     title: String,
     subTitle: String,
     rating: Float? = null,
+    onClick: () -> Unit,
     additionalData: @Composable () -> Unit = {}
 ) {
     Card(
         modifier = modifier,
         shape = RoundedCornerShape(16.dp),
-        elevation = 8.dp
+        elevation = 8.dp,
+        onClick = onClick
     ) {
         Row(modifier = Modifier
             .padding(16.dp)

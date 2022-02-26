@@ -1,6 +1,5 @@
 package uz.qmgroup.horeca.hotels
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -14,7 +13,6 @@ import uz.qmgroup.horeca.hotels.components.HotelCard
 @Composable
 fun HotelsSection(
     modifier: Modifier = Modifier,
-    navigate: (Long) -> Unit,
     navigateToAll: () -> Unit,
     viewModel: HotelsViewModel = viewModel()
 ) {
@@ -33,7 +31,6 @@ fun HotelsSection(
                         hotel = it,
                         modifier = Modifier
                             .width(360.dp)
-                            .clickable { navigate(it.id) }
                     )
                 }
             })

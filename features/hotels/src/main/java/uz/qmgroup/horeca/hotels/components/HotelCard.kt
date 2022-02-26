@@ -19,7 +19,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.transform.RoundedCornersTransformation
-import uz.qmgroup.horeca.common.ItemCard
+import uz.qmgroup.horeca.common.components.ItemCard
 import uz.qmgroup.horeca.features.hotels.R
 import uz.qmgroup.horeca.hotels.Hotel
 import java.text.NumberFormat
@@ -27,7 +27,8 @@ import java.text.NumberFormat
 @Composable
 fun HotelCard(
     modifier: Modifier = Modifier,
-    hotel: Hotel
+    hotel: Hotel,
+    onCLick: () -> Unit = {}
 ) {
     val image = hotel.imageUrl.ifEmpty { R.mipmap.img_hilton }
 
@@ -39,8 +40,8 @@ fun HotelCard(
         subTitle = hotel.city,
         modifier = modifier.padding(8.dp),
         rating = hotel.rating,
+        onClick = onCLick,
         additionalData = {
-
             Column(
                 verticalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxHeight(),
