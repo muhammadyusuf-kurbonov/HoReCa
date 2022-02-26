@@ -19,6 +19,7 @@ import uz.qmgroup.horeca.restaurants.RestaurantsSection
 import uz.qmgroup.horeca.ui.screens.destinations.CafesListDestination
 import uz.qmgroup.horeca.ui.screens.destinations.HotelsListDestination
 import uz.qmgroup.horeca.ui.screens.destinations.RestaurantsListDestination
+import uz.qmgroup.horeca.ui.theme.HoReCaTheme
 
 @Destination(start = true)
 @Composable
@@ -27,7 +28,7 @@ fun HomeScreen(
     navigator: DestinationsNavigator
 ) {
     LazyColumn(
-        modifier = modifier.padding(16.dp, 0.dp, 16.dp, 8.dp),
+        modifier = modifier.padding(16.dp, 0.dp, 16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         item {
@@ -46,16 +47,19 @@ fun HomeScreen(
                 navigateToAll = {
                     navigator.navigate(HotelsListDestination)
                 })
+            HoReCaTheme {}
         }
         item {
             RestaurantsSection(navigateToAll = {
                 navigator.navigate(RestaurantsListDestination)
             })
+            HoReCaTheme {}
         }
         item {
             CafesSection(navigateToAll = {
                 navigator.navigate(CafesListDestination)
             })
+            HoReCaTheme {}
         }
     }
 }

@@ -21,7 +21,6 @@ import androidx.core.view.ViewCompat
 
 private val LightColorScheme = lightColors(
     primary = Primary,
-    secondary = Primary,
     surface = Color(0xFFFFFFFF),
     background = Color(0xFFFFFFFF)
     /* Other default colors to override
