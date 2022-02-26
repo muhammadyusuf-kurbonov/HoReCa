@@ -18,8 +18,11 @@ fun CafesScreen(
             modifier = modifier,
             title = "Cafes",
             mainImage = painterResource(id = R.drawable.restaurant),
-            hotelsViewModel = cafesViewModel,
+            viewModel = cafesViewModel,
             navigateBack = navigateToMain,
+            dialog = {
+                SortDialog(applyFilter = {})
+            },
             renderItem = {
                 CafeCard(cafe = it, modifier = Modifier.fillMaxWidth())
             }

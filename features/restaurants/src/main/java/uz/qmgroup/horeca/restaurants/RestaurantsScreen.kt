@@ -19,8 +19,11 @@ fun RestaurantsScreen(
             modifier = modifier,
             title = "Restaurants",
             mainImage = painterResource(id = R.drawable.restaurant),
-            hotelsViewModel = restaurantsViewModel,
+            viewModel = restaurantsViewModel,
             navigateBack = navigateToMain,
+            dialog = {
+                SortDialog(applyFilter = {})
+            },
             renderItem = {
                 RestaurantCard(
                     restaurant = it,
