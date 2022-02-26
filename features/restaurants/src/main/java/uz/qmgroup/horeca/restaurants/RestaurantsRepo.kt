@@ -1,40 +1,32 @@
-package uz.qmgroup.horeca.hotels.database
+package uz.qmgroup.horeca.restaurants
 
 import uz.qmgroup.horeca.common.database.BaseRepository
-import uz.qmgroup.horeca.hotels.Hotel
 
-class HotelsRepo: BaseRepository<Hotel> {
-    override suspend fun getAll() = listOf(
-        Hotel(
+class RestaurantsRepo: BaseRepository<Restaurant> {
+    override suspend fun getAll(): List<Restaurant> = listOf(
+        Restaurant(
             title = "Hilton",
             city = "Tashkent",
             rating = 3.5f,
             stars = 2,
             address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
-            price = 120f,
-            wifi = true
+            comment = "Hi. Best Restaurant",
+            distanceToIt = 5L,
         ),
-        Hotel(
-            title = "Miras",
+        Restaurant(
+            title = "Big Hall",
             city = "Tashkent",
             rating = 3.5f,
             stars = 4,
             address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
-            price = 120f,
-            wifi = true,
-            restaurant = false,
-            pool = true
         ),
-        Hotel(
+        Restaurant(
             title = "Big Hall",
             city = "Tashkent",
             rating = 5f,
             stars = 3,
             address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
-            price = 120f,
-            wifi = false,
-            restaurant = true,
-            gym = true
         )
     )
+
 }

@@ -17,6 +17,7 @@ import uz.qmgroup.horeca.cafes.CafesSection
 import uz.qmgroup.horeca.hotels.HotelsSection
 import uz.qmgroup.horeca.restaurants.RestaurantsSection
 import uz.qmgroup.horeca.ui.screens.destinations.HotelsListDestination
+import uz.qmgroup.horeca.ui.screens.destinations.RestaurantsListDestination
 
 @Destination(start = true)
 @Composable
@@ -50,7 +51,7 @@ fun HomeScreen(
         }
         item {
             RestaurantsSection(navigateToAll = {
-
+                navigator.navigate(RestaurantsListDestination)
             })
         }
         item {

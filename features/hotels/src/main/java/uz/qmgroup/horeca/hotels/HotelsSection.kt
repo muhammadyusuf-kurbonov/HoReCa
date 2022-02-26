@@ -19,7 +19,7 @@ fun HotelsSection(
     viewModel: HotelsViewModel = viewModel()
 ) {
     LaunchedEffect(key1 = Unit) {
-        viewModel.loadData()
+        viewModel.loadPreviewData()
     }
 
     HotelsTheme {
@@ -28,7 +28,7 @@ fun HotelsSection(
             title = "Hotels",
             navigateToAll = navigateToAll,
             items = {
-                items(viewModel.hotelsList) {
+                items(viewModel.itemsList) {
                     HotelCard(
                         hotel = it,
                         modifier = Modifier

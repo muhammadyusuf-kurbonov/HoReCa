@@ -3,48 +3,29 @@ package uz.qmgroup.horeca.restaurants
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import uz.qmgroup.horeca.common.components.ItemsSection
-
-val restaurants = listOf(
-    Restaurant(
-        title = "Hilton",
-        city = "Tashkent",
-        rating = 3.5f,
-        stars = 2,
-        address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
-        comment = "Hi. Best Restaurant",
-        distanceToIt = 5L,
-    ),
-    Restaurant(
-        title = "Big Hall",
-        city = "Tashkent",
-        rating = 3.5f,
-        stars = 4,
-        address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
-    ),
-    Restaurant(
-        title = "Big Hall",
-        city = "Tashkent",
-        rating = 5f,
-        stars = 3,
-        address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
-    )
-)
 
 @Composable
 fun RestaurantsSection(
     modifier: Modifier = Modifier,
     navigateToAll: () -> Unit,
+    restaurantsViewModel: RestaurantsViewModel = viewModel()
 ) {
+    LaunchedEffect(key1 = Unit){
+        restaurantsViewModel.loadPreviewData()
+    }
+
     RestaurantsTheme {
         ItemsSection(
             modifier = modifier,
             title = "Restaurants",
             navigateToAll = navigateToAll,
             items = {
-                items(restaurants) {
+                items(restaurantsViewModel.itemsList) {
                     RestaurantCard(
                         restaurant = it,
                         modifier = Modifier.width(360.dp)

@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.hotels.screen
+package uz.qmgroup.horeca.restaurants
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
@@ -6,25 +6,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import uz.qmgroup.horeca.common.components.ItemsScreen
-import uz.qmgroup.horeca.features.hotels.R
-import uz.qmgroup.horeca.hotels.HotelsTheme
-import uz.qmgroup.horeca.hotels.HotelsViewModel
-import uz.qmgroup.horeca.hotels.components.HotelCard
+import uz.qmgroup.horeca.features.restaurants.R
 
 @Composable
-fun HotelsScreen(
+fun RestaurantsScreen(
     modifier: Modifier = Modifier,
-    hotelsViewModel: HotelsViewModel = viewModel()
+    restaurantsViewModel: RestaurantsViewModel = viewModel()
 ) {
-    HotelsTheme {
+    RestaurantsTheme {
         ItemsScreen(
             modifier = modifier,
-            title = "Hotels",
-            mainImage = painterResource(id = R.mipmap.img_hilton),
-            hotelsViewModel = hotelsViewModel,
+            title = "Restaurants",
+            mainImage = painterResource(id = R.drawable.restaurant),
+            hotelsViewModel = restaurantsViewModel,
             renderItem = {
-                HotelCard(
-                    hotel = it,
+                RestaurantCard(
+                    restaurant = it,
                     modifier = Modifier.fillMaxWidth()
                 )
             }
