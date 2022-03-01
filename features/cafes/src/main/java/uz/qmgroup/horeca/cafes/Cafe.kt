@@ -5,6 +5,7 @@ data class Hour(
 )
 
 class Cafe(
+    val id: Long,
     val title: String = "",
     val city: String = "",
     val stars: Int = 0,
@@ -14,4 +15,5 @@ class Cafe(
     val comment: String = "",
     val workTime: Pair<Hour, Hour> = Hour(9, 0) to Hour(17, 0),
     val imageUrl: String = "",
+    val phone: String? = null,
 )

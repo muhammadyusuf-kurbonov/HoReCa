@@ -17,9 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import uz.qmgroup.horeca.R
-import uz.qmgroup.horeca.ui.screens.destinations.DirectionDestination
-import uz.qmgroup.horeca.ui.screens.destinations.HomeScreenDestination
-import uz.qmgroup.horeca.ui.screens.destinations.SearchScreenDestination
+import uz.qmgroup.horeca.destinations.*
 
 @Composable
 fun AppTopBar(

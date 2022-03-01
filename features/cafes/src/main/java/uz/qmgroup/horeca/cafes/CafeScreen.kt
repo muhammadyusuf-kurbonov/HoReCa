@@ -11,7 +11,8 @@ import uz.qmgroup.horeca.common.components.ItemsScreen
 fun CafesScreen(
     modifier: Modifier = Modifier,
     cafesViewModel: CafesViewModel = viewModel(),
-    navigateToMain: () -> Unit
+    navigateToMain: () -> Unit,
+    openDetails: (id: Long) -> Unit
 ) {
     CafesTheme {
         ItemsScreen(
@@ -24,7 +25,11 @@ fun CafesScreen(
                 SortDialog(applyFilter = {})
             },
             renderItem = {
-                CafeCard(cafe = it, modifier = Modifier.fillMaxWidth())
+                CafeCard(
+                    cafe = it,
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = {openDetails(it.id)}
+                )
             }
         )
     }

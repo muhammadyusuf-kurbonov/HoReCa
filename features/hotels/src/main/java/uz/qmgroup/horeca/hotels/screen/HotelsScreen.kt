@@ -16,7 +16,8 @@ import uz.qmgroup.horeca.hotels.components.HotelCard
 fun HotelsScreen(
     modifier: Modifier = Modifier,
     hotelsViewModel: HotelsViewModel = viewModel(),
-    navigateToMain: () -> Unit
+    navigateToMain: () -> Unit,
+    openDetails: (id: Long) -> Unit
 ) {
     HotelsTheme {
         ItemsScreen(
@@ -31,7 +32,8 @@ fun HotelsScreen(
             renderItem = {
                 HotelCard(
                     hotel = it,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    onCLick = {openDetails(it.id)}
                 )
             }
         )

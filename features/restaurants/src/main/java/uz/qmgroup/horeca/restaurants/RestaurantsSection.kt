@@ -13,6 +13,7 @@ import uz.qmgroup.horeca.common.components.ItemsSection
 fun RestaurantsSection(
     modifier: Modifier = Modifier,
     navigateToAll: () -> Unit,
+    navigateToDetails: (Long) -> Unit,
     restaurantsViewModel: RestaurantsViewModel = viewModel()
 ) {
     LaunchedEffect(key1 = Unit){
@@ -28,7 +29,8 @@ fun RestaurantsSection(
                 items(restaurantsViewModel.itemsList) {
                     RestaurantCard(
                         restaurant = it,
-                        modifier = Modifier.width(360.dp)
+                        modifier = Modifier.width(360.dp),
+                        onClick = { navigateToDetails(it.id) }
                     )
                 }
             })

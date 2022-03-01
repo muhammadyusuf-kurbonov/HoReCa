@@ -12,6 +12,7 @@ import uz.qmgroup.horeca.features.restaurants.R
 fun RestaurantsScreen(
     modifier: Modifier = Modifier,
     restaurantsViewModel: RestaurantsViewModel = viewModel(),
+    navigateToDetails: (Long) -> Unit,
     navigateToMain: () -> Unit
 ) {
     RestaurantsTheme {
@@ -27,7 +28,10 @@ fun RestaurantsScreen(
             renderItem = {
                 RestaurantCard(
                     restaurant = it,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = {
+                        navigateToDetails(it.id)
+                    }
                 )
             }
         )

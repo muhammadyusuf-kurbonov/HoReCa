@@ -3,8 +3,9 @@ package uz.qmgroup.horeca.restaurants
 import uz.qmgroup.horeca.common.database.BaseRepository
 
 class RestaurantsRepo: BaseRepository<Restaurant> {
-    override suspend fun getAll(): List<Restaurant> = listOf(
+    private val items = listOf(
         Restaurant(
+            id = 0,
             title = "Hilton",
             city = "Tashkent",
             rating = 3.5f,
@@ -14,6 +15,7 @@ class RestaurantsRepo: BaseRepository<Restaurant> {
             distanceToIt = 5L,
         ),
         Restaurant(
+            id = 1,
             title = "Big Hall",
             city = "Tashkent",
             rating = 3.5f,
@@ -21,6 +23,7 @@ class RestaurantsRepo: BaseRepository<Restaurant> {
             address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
         ),
         Restaurant(
+            id = 2,
             title = "Big Hall",
             city = "Tashkent",
             rating = 5f,
@@ -28,5 +31,9 @@ class RestaurantsRepo: BaseRepository<Restaurant> {
             address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
         )
     )
+
+    override suspend fun get(id: Long): Restaurant = items[id.toInt()]
+
+    override suspend fun getAll(): List<Restaurant> = items
 
 }

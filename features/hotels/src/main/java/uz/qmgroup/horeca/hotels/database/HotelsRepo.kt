@@ -4,8 +4,9 @@ import uz.qmgroup.horeca.common.database.BaseRepository
 import uz.qmgroup.horeca.hotels.Hotel
 
 class HotelsRepo: BaseRepository<Hotel> {
-    override suspend fun getAll() = listOf(
+    private val items = listOf(
         Hotel(
+            id = 0,
             title = "Hilton",
             city = "Tashkent",
             rating = 3.5f,
@@ -15,6 +16,7 @@ class HotelsRepo: BaseRepository<Hotel> {
             wifi = true
         ),
         Hotel(
+            id = 1,
             title = "Miras",
             city = "Tashkent",
             rating = 3.5f,
@@ -26,6 +28,7 @@ class HotelsRepo: BaseRepository<Hotel> {
             pool = true
         ),
         Hotel(
+            id = 2,
             title = "Big Hall",
             city = "Tashkent",
             rating = 5f,
@@ -37,4 +40,7 @@ class HotelsRepo: BaseRepository<Hotel> {
             gym = true
         )
     )
+
+    override suspend fun get(id: Long): Hotel = items[id.toInt()]
+    override suspend fun getAll(): List<Hotel> = items
 }

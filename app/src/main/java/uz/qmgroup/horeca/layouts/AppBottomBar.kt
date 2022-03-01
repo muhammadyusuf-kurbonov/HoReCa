@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import uz.qmgroup.horeca.ui.screens.destinations.*
+import uz.qmgroup.horeca.destinations.*
 
 @Composable
 fun AppBottomBar(

@@ -7,7 +7,10 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Explore
 import androidx.compose.material.icons.outlined.LocationOn
-import androidx.compose.material.icons.rounded.*
+import androidx.compose.material.icons.rounded.FitnessCenter
+import androidx.compose.material.icons.rounded.Pool
+import androidx.compose.material.icons.rounded.Restaurant
+import androidx.compose.material.icons.rounded.Wifi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -40,6 +43,7 @@ fun HotelCard(
         subTitle = hotel.city,
         modifier = modifier.padding(8.dp),
         rating = hotel.rating,
+        ratingStars = hotel.stars,
         onClick = onCLick,
         additionalData = {
             Column(
@@ -51,24 +55,6 @@ fun HotelCard(
                     horizontalAlignment = Alignment.End,
                     verticalArrangement = Arrangement.spacedBy(4.dp),
                 ) {
-                    Row {
-                        val ratingStars = hotel.stars
-                        repeat(ratingStars) {
-                            Icon(
-                                imageVector = Icons.Rounded.Star,
-                                contentDescription = "",
-                                tint = MaterialTheme.colors.primary
-                            )
-                        }
-                        repeat(5 - ratingStars) {
-                            Icon(
-                                imageVector = Icons.Rounded.StarBorder,
-                                contentDescription = "",
-                                tint = MaterialTheme.colors.primary
-                            )
-                        }
-                    }
-
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
                             text = hotel.address,

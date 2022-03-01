@@ -6,6 +6,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.painter.Painter
@@ -20,6 +21,7 @@ fun ItemCard(
     image: Painter,
     title: String,
     subTitle: String,
+    ratingStars: Int,
     rating: Float? = null,
     onClick: () -> Unit,
     additionalData: @Composable () -> Unit = {}
@@ -30,9 +32,11 @@ fun ItemCard(
         elevation = 8.dp,
         onClick = onClick
     ) {
-        Row(modifier = Modifier
-            .padding(16.dp)
-            .height(IntrinsicSize.Min)) {
+        Row(
+            modifier = Modifier
+                .padding(16.dp)
+                .height(IntrinsicSize.Min)
+        ) {
 
             Column(modifier = Modifier.weight(1f)) {
                 Box(modifier = Modifier.padding(bottom = 4.dp)) {
@@ -62,6 +66,7 @@ fun ItemCard(
                 modifier = Modifier.weight(1f)
             ) {
                 Column(modifier = Modifier.weight(1f)) {
+                    StarsComponent(rating = ratingStars, modifier = Modifier.align(Alignment.End))
                     additionalData()
                 }
             }

@@ -13,8 +13,8 @@ import androidx.navigation.compose.rememberNavController
 import com.ramcosta.composedestinations.DestinationsNavHost
 import com.ramcosta.composedestinations.navigation.navigateTo
 import kotlinx.coroutines.launch
-import uz.qmgroup.horeca.ui.screens.NavGraphs
-import uz.qmgroup.horeca.ui.screens.navDestination
+import uz.qmgroup.horeca.NavGraphs
+import uz.qmgroup.horeca.navDestination
 import uz.qmgroup.horeca.ui.theme.HoReCaTheme
 
 @Composable

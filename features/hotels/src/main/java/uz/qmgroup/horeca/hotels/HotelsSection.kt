@@ -14,6 +14,7 @@ import uz.qmgroup.horeca.hotels.components.HotelCard
 fun HotelsSection(
     modifier: Modifier = Modifier,
     navigateToAll: () -> Unit,
+    navigateToDetails: (id: Long) -> Unit,
     viewModel: HotelsViewModel = viewModel()
 ) {
     LaunchedEffect(key1 = Unit) {
@@ -30,7 +31,8 @@ fun HotelsSection(
                     HotelCard(
                         hotel = it,
                         modifier = Modifier
-                            .width(360.dp)
+                            .width(360.dp),
+                        onCLick = { navigateToDetails(it.id) }
                     )
                 }
             })

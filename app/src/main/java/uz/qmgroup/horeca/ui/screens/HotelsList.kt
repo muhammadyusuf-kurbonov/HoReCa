@@ -4,8 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import uz.qmgroup.horeca.destinations.HomeScreenDestination
+import uz.qmgroup.horeca.destinations.HotelDetailsDestination
 import uz.qmgroup.horeca.hotels.screen.HotelsScreen
-import uz.qmgroup.horeca.ui.screens.destinations.HomeScreenDestination
 
 @Destination
 @Composable
@@ -15,6 +16,7 @@ fun HotelsList(
 ) {
     HotelsScreen(
         modifier = modifier,
-        navigateToMain = { navigator.navigate(HomeScreenDestination) }
+        navigateToMain = { navigator.navigate(HomeScreenDestination) },
+        openDetails = { navigator.navigate(HotelDetailsDestination(it)) }
     )
 }

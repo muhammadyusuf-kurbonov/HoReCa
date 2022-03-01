@@ -7,6 +7,7 @@ data class Hotel(
     val stars: Int = 0,
     val rating: Float = 0f,
     val address: String = "",
+    val phone: String? = null,
     val distanceToIt: Long = 0L,
     val price: Float = 0f,
     val comment: String = "",

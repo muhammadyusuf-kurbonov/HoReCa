@@ -14,11 +14,9 @@ import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import uz.qmgroup.horeca.cafes.CafesSection
+import uz.qmgroup.horeca.destinations.*
 import uz.qmgroup.horeca.hotels.HotelsSection
 import uz.qmgroup.horeca.restaurants.RestaurantsSection
-import uz.qmgroup.horeca.ui.screens.destinations.CafesListDestination
-import uz.qmgroup.horeca.ui.screens.destinations.HotelsListDestination
-import uz.qmgroup.horeca.ui.screens.destinations.RestaurantsListDestination
 import uz.qmgroup.horeca.ui.theme.HoReCaTheme
 
 @Destination(start = true)
@@ -46,19 +44,31 @@ fun HomeScreen(
             HotelsSection(
                 navigateToAll = {
                     navigator.navigate(HotelsListDestination)
-                })
+                },
+                navigateToDetails = { navigator.navigate(HotelDetailsDestination(it)) }
+            )
             HoReCaTheme {}
         }
         item {
-            RestaurantsSection(navigateToAll = {
-                navigator.navigate(RestaurantsListDestination)
-            })
+            RestaurantsSection(
+                navigateToAll = {
+                    navigator.navigate(RestaurantsListDestination)
+                },
+                navigateToDetails = {
+                    navigator.navigate(RestaurantDetailsDestination(it))
+                }
+            )
             HoReCaTheme {}
         }
         item {
-            CafesSection(navigateToAll = {
-                navigator.navigate(CafesListDestination)
-            })
+            CafesSection(
+                navigateToAll = {
+                    navigator.navigate(CafesListDestination)
+                },
+                navigateToDetails = {
+                    navigator.navigate(CafeDetailsDestination(it))
+                }
+            )
             HoReCaTheme {}
         }
     }

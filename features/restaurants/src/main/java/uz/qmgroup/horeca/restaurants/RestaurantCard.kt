@@ -8,8 +8,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Explore
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.rounded.Schedule
-import androidx.compose.material.icons.rounded.Star
-import androidx.compose.material.icons.rounded.StarBorder
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -51,6 +49,7 @@ fun RestaurantCard(
         subTitle = restaurant.city,
         modifier = modifier.padding(8.dp),
         rating = restaurant.rating,
+        ratingStars = restaurant.stars,
         onClick = onClick,
         additionalData = {
             Column(
@@ -59,24 +58,6 @@ fun RestaurantCard(
                     .padding(start = 8.dp),
                 horizontalAlignment = Alignment.End
             ) {
-                Row {
-                    val ratingStars = restaurant.stars
-                    repeat(ratingStars) {
-                        Icon(
-                            imageVector = Icons.Rounded.Star,
-                            contentDescription = "",
-                            tint = MaterialTheme.colors.primary
-                        )
-                    }
-                    repeat(5 - ratingStars) {
-                        Icon(
-                            imageVector = Icons.Rounded.StarBorder,
-                            contentDescription = "",
-                            tint = MaterialTheme.colors.primary
-                        )
-                    }
-                }
-
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
                         text = restaurant.address,
