@@ -18,6 +18,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -89,7 +90,7 @@ fun <E> ItemsScreen(
                         Spacer(modifier = Modifier.width(2.dp))
                         Text(text = "sort", style = MaterialTheme.typography.button)
                     }
-                    Button(onClick = { /*TODO*/ }) {
+                    Button(onClick = { /*TODO*/ }, shape = RectangleShape) {
                         Icon(imageVector = Icons.Default.Tune, contentDescription = "Filter")
                         Spacer(modifier = Modifier.width(2.dp))
                         Text(text = "filter", style = MaterialTheme.typography.button)
