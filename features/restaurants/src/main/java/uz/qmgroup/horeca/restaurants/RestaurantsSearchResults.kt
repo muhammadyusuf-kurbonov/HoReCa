@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Hotel
 import androidx.compose.material.icons.outlined.Restaurant
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
