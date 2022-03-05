@@ -78,7 +78,8 @@ fun HotelDetailsScreen(
                         )
                     }
                 },
-                reviews = listOf()
+                reviews = listOf(),
+                gotoBooking = {/*TODO: add goto*/}
             )
         }
     }

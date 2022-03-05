@@ -56,7 +56,8 @@ fun RestaurantDetailsScreen(
                         )
                     }
                 },
-                reviews = listOf()
+                reviews = listOf(),
+                gotoBooking = {/*TODO: Add gotoBooking*/}
             )
         }
     }

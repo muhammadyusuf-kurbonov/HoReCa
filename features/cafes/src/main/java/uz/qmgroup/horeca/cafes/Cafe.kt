@@ -16,4 +16,5 @@ class Cafe(
     val workTime: Pair<Hour, Hour> = Hour(9, 0) to Hour(17, 0),
     val imageUrl: String = "",
     val phone: String? = null,
+    val areas: List<String> = emptyList()
 )

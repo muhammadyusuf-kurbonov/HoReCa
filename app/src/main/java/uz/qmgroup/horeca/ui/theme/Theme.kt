@@ -1,7 +1,6 @@
 package uz.qmgroup.horeca.ui.theme
 
 import android.app.Activity
-import android.util.Log
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -12,8 +11,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
-import com.google.accompanist.insets.LocalWindowInsets
-import com.google.accompanist.insets.ProvideWindowInsets
 
 //
 //private val DarkColorScheme = darkColorScheme(
@@ -62,9 +59,6 @@ fun HoReCaTheme(
         typography = Typography,
 
     ) {
-        ProvideWindowInsets {
-            Surface(contentColor = MaterialTheme.colors.primary, content = content)
-            Log.d("Insets", LocalWindowInsets.current.ime.layoutInsets.bottom.toString())
-        }
+        Surface(contentColor = MaterialTheme.colors.primary, content = content)
     }
 }

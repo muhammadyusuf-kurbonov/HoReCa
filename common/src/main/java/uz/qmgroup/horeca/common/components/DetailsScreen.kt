@@ -44,8 +44,9 @@ fun DetailsScreen(
     price: Long,
     phone: String? = null,
     socialPages: List<Pair<SocialPage, String>> = emptyList(),
-    features: @Composable ColumnScope.() -> Unit,
+    features: @Composable (ColumnScope.() -> Unit),
     reviews: List<Review>,
+    gotoBooking: () -> Unit,
 ) {
     LazyColumn(modifier = modifier) {
         item {
@@ -278,7 +279,7 @@ fun DetailsScreen(
         item {
             Column(modifier = Modifier.fillMaxWidth()) {
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = gotoBooking,
                     modifier = Modifier
                         .fillMaxWidth(.6f)
                         .align(Alignment.CenterHorizontally),

@@ -1,10 +1,7 @@
 package uz.qmgroup.horeca.restaurants
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Restaurant
@@ -33,6 +30,7 @@ fun RestaurantsSearchResults(
             navigateToAll = navigateToAll,
             renderItem = {
                 Row(modifier = Modifier
+                    .fillMaxWidth()
                     .clickable { navigateToRestaurant(it.id) }
                     .padding(8.dp), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                     Icon(imageVector = Icons.Outlined.Restaurant, contentDescription = "", tint = MaterialTheme.colors.primary)

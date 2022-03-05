@@ -14,7 +14,12 @@ class CafesRepo: BaseRepository<Cafe> {
             address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
             comment = "Hi. Best Restaurant",
             distanceToIt = 5L,
-            phone = "+998913975538"
+            phone = "+998913975538",
+            areas = listOf(
+                "Umumiy joy",
+                "VIP",
+                "Banketlar zali"
+            )
         ),
         Cafe(
             id = 1,

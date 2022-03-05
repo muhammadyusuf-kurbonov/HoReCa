@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
+import com.google.accompanist.insets.ProvideWindowInsets
+import com.google.accompanist.insets.imePadding
+import com.google.accompanist.insets.systemBarsPadding
 import uz.qmgroup.horeca.layouts.AppLayout
 
 class MainActivity : ComponentActivity() {
@@ -14,10 +16,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            AppLayout(
-                modifier = Modifier.fillMaxSize()
-                    .systemBarsPadding()
-            )
+            ProvideWindowInsets {
+                AppLayout(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .systemBarsPadding()
+                        .imePadding()
+                )
+            }
         }
     }
 }

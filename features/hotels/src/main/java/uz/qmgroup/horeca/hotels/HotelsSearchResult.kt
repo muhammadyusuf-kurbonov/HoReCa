@@ -1,10 +1,7 @@
 package uz.qmgroup.horeca.hotels
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Hotel
@@ -33,6 +30,7 @@ fun HotelsSearchResult(
             navigateToAll = navigateToAll,
             renderItem = {
                 Row(modifier = Modifier
+                    .fillMaxWidth()
                     .clickable { navigateToHotel(it.id) }
                     .padding(8.dp), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                     Icon(imageVector = Icons.Outlined.Hotel, contentDescription = "", tint = MaterialTheme.colors.primary)

@@ -20,7 +20,8 @@ import uz.qmgroup.horeca.common.models.SocialPage
 fun CafeDetailsScreen(
     modifier: Modifier = Modifier,
     id: Long,
-    cafesViewModel: CafesViewModel = viewModel()
+    cafesViewModel: CafesViewModel = viewModel(),
+    gotoBooking: () -> Unit
 ) {
     LaunchedEffect(key1 = Unit) {
         cafesViewModel.loadItem(id)
@@ -76,7 +77,8 @@ fun CafeDetailsScreen(
                         "Sebastian",
                         "Hallo. Very good place. I want again!"
                     ),
-                )
+                ),
+                gotoBooking = gotoBooking
             )
         }
     }
