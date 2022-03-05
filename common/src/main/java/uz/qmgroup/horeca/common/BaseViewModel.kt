@@ -16,6 +16,22 @@ abstract class BaseViewModel<E> : ViewModel() {
 
     protected abstract fun getRepo(): BaseRepository<E>
 
+    fun searchData(searchQuery: String){
+        viewModelScope.launch {
+            itemsList.clear()
+            itemsList.addAll(
+                getRepo().search(searchQuery)
+            )
+        }
+    }
+
+    fun loadData() {
+        viewModelScope.launch {
+            itemsList.clear()
+            itemsList.addAll(getRepo().getAll())
+        }
+    }
+
     fun loadPreviewData() {
         viewModelScope.launch {
             itemsList.clear()

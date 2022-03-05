@@ -43,4 +43,9 @@ class HotelsRepo: BaseRepository<Hotel> {
 
     override suspend fun get(id: Long): Hotel = items[id.toInt()]
     override suspend fun getAll(): List<Hotel> = items
+    override suspend fun search(query: String): List<Hotel> {
+        return items.filter {
+            it.title.contains(query) or it.address.contains(query)
+        }
+    }
 }

@@ -37,5 +37,10 @@ class CafesRepo: BaseRepository<Cafe> {
     override suspend fun get(id: Long): Cafe = items[id.toInt()]
 
     override suspend fun getAll(): List<Cafe> = items
+    override suspend fun search(query: String): List<Cafe> {
+        return items.filter {
+            it.title.contains(query) or it.address.contains(query)
+        }
+    }
 
 }

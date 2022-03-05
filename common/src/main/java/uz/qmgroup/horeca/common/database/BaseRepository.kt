@@ -4,4 +4,6 @@ interface BaseRepository<E> {
     suspend fun getAll(): List<E>
 
     suspend fun get(id: Long): E
+
+    suspend fun search(query: String): List<E>
 }

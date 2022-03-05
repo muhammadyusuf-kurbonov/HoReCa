@@ -36,4 +36,10 @@ class RestaurantsRepo: BaseRepository<Restaurant> {
 
     override suspend fun getAll(): List<Restaurant> = items
 
+    override suspend fun search(query: String): List<Restaurant> {
+        return items.filter {
+            it.title.contains(query) or it.address.contains(query)
+        }
+    }
+
 }
