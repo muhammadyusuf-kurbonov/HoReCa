@@ -2,12 +2,10 @@ package uz.qmgroup.horeca.common.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -17,10 +15,12 @@ fun ButtonsGroup(
     modifier: Modifier = Modifier,
     optionsTextStyle: TextStyle = MaterialTheme.typography.body1,
     options: List<String>,
+    icons: List<ImageVector> = emptyList(),
     onOptionClick: (String) -> Unit
 ) {
     Row(
-        modifier = modifier.height(IntrinsicSize.Max)
+        modifier = modifier
+            .height(IntrinsicSize.Max)
             .padding(8.dp),
         horizontalArrangement = Arrangement.SpaceAround
     ) {
@@ -32,19 +32,24 @@ fun ButtonsGroup(
                     topEnd = if (index == options.size - 1) 99.dp else 0.dp,
                     bottomEnd = if (index == options.size - 1) 99.dp else 0.dp,
                 ),
-                modifier = Modifier.padding(0.dp)
+                modifier = Modifier
+                    .padding(0.dp)
                     .fillMaxHeight()
                     .weight(1f),
                 onClick = { onOptionClick(option) },
                 elevation = ButtonDefaults.elevation(4.dp)
             ) {
-                Text(
-                    text = option,
-                    style = optionsTextStyle,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(8.dp),
-                    maxLines = 2
-                )
+                Row(modifier = Modifier.padding(8.dp), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                    if (icons.isNotEmpty()) {
+                        Icon(imageVector = icons[index], contentDescription = "")
+                    }
+                    Text(
+                        text = option,
+                        style = optionsTextStyle,
+                        textAlign = TextAlign.Center,
+                        maxLines = 2
+                    )
+                }
             }
         }
     }

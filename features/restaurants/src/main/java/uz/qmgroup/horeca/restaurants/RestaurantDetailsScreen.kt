@@ -19,7 +19,8 @@ import uz.qmgroup.horeca.common.models.SocialPage
 fun RestaurantDetailsScreen(
     modifier: Modifier = Modifier,
     id: Long,
-    restaurantsViewModel: RestaurantsViewModel = viewModel()
+    restaurantsViewModel: RestaurantsViewModel = viewModel(),
+    gotoBooking: () -> Unit
 ) {
     LaunchedEffect(key1 = Unit) {
         restaurantsViewModel.loadItem(id)
@@ -57,7 +58,7 @@ fun RestaurantDetailsScreen(
                     }
                 },
                 reviews = listOf(),
-                gotoBooking = {/*TODO: Add gotoBooking*/}
+                gotoBooking = gotoBooking
             )
         }
     }

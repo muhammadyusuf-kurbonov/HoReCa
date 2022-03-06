@@ -25,7 +25,8 @@ import uz.qmgroup.horeca.hotels.components.FeatureIcon
 fun HotelDetailsScreen(
     modifier: Modifier = Modifier,
     id: Long,
-    hotelsViewModel: HotelsViewModel = viewModel()
+    hotelsViewModel: HotelsViewModel = viewModel(),
+    gotoBooking: () -> Unit
 ) {
     LaunchedEffect(key1 = Unit) {
         hotelsViewModel.loadItem(id)
@@ -79,7 +80,7 @@ fun HotelDetailsScreen(
                     }
                 },
                 reviews = listOf(),
-                gotoBooking = {/*TODO: add goto*/}
+                gotoBooking = gotoBooking
             )
         }
     }

@@ -16,5 +16,6 @@ data class Hotel(
     val wifi: Boolean = true,
     val restaurant: Boolean = false,
     val pool: Boolean = false,
-    val gym: Boolean = false
+    val gym: Boolean = false,
+    val tariffs: List<String> = emptyList()
 )

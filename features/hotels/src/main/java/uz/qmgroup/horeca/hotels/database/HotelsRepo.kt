@@ -13,7 +13,12 @@ class HotelsRepo: BaseRepository<Hotel> {
             stars = 2,
             address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
             price = 120f,
-            wifi = true
+            wifi = true,
+            tariffs = listOf(
+                "SemiLUX",
+                "Delux",
+                "VIP"
+            )
         ),
         Hotel(
             id = 1,

@@ -17,4 +17,5 @@ class Restaurant(
     val comment: String = "",
     val workTime: Pair<Hour, Hour> = Hour(9, 0) to Hour(17, 0),
     val imageUrl: String = "",
+    val areas: List<String> = emptyList()
 )

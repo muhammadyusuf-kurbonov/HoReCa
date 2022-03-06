@@ -3,6 +3,7 @@ package uz.qmgroup.horeca.common.components
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -11,6 +12,7 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -21,7 +23,7 @@ import androidx.compose.ui.unit.dp
 fun BookingScreen(
     modifier: Modifier = Modifier,
     objectTitle: String,
-    options: LazyListScope.() -> Unit
+    options: LazyListScope.() -> Unit,
 ) {
     var customerFullName by remember { mutableStateOf("") }
     var customerPhone by remember { mutableStateOf("") }
@@ -29,7 +31,7 @@ fun BookingScreen(
     var customerNote by remember { mutableStateOf("") }
 
     LazyColumn(
-        modifier = modifier.padding(16.dp, 0.dp),
+        modifier = modifier.padding(start = 16.dp, bottom = 0.dp, end = 16.dp, top = 16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         item {
@@ -130,5 +132,19 @@ fun BookingScreen(
             }
         }
 
+        item {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Button(
+                    modifier = Modifier.fillMaxWidth(.6f),
+                    shape = RoundedCornerShape(99.dp),
+                    onClick = { /*TODO*/ }
+                ) {
+                    Text(text = "Book", modifier = Modifier.padding(4.dp))
+                }
+            }
+        }
     }
 }
