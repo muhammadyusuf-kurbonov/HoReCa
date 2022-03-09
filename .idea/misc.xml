@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/compose-model-1645298361334.xml" value="0.33" />
+        <entry key="../../../../layout/compose-model-1646803358967.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/ic_baseline_hotel_24.xml" value="0.1855" />
         <entry key="app/src/main/res/drawable/ic_baseline_restaurant_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/source_icons_dollar.xml" value="0.1855" />
@@ -12,6 +13,7 @@
         <entry key="common/src/main/res/drawable/ic_baseline_bookmark_24.xml" value="0.1855" />
         <entry key="common/src/main/res/drawable/ic_baseline_star_24.xml" value="0.2275" />
         <entry key="common/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.2275" />
+        <entry key="features/cafes/src/main/res/drawable/coffee_shop_amico.xml" value="0.1015" />
         <entry key="features/cafes/src/main/res/drawable/source_icons_clock_outline.xml" value="0.2275" />
       </map>
     </option>
