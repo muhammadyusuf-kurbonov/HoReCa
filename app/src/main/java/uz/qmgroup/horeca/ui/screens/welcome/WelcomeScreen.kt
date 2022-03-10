@@ -39,10 +39,11 @@ fun WelcomeScreen(
             }
         ) {
             when (it) {
-                0 -> HotelsPage(modifier = Modifier.fillMaxSize(), nextPage = { currentPage++ })
-                1 -> RestaurantsPage(modifier = Modifier.fillMaxSize(), nextPage = { currentPage++ })
-                2 -> CafesPage(modifier = Modifier.fillMaxSize(), nextPage = { currentPage++ })
-                3 -> finishWizard()
+                0 -> WelcomePage(modifier = Modifier.fillMaxSize(), nextPage = { currentPage++ })
+                1 -> HotelsPage(modifier = Modifier.fillMaxSize(), nextPage = { currentPage++ })
+                2 -> RestaurantsPage(modifier = Modifier.fillMaxSize(), nextPage = { currentPage++ })
+                3 -> CafesPage(modifier = Modifier.fillMaxSize(), nextPage = { currentPage++ })
+                4 -> finishWizard()
             }
         }
     }

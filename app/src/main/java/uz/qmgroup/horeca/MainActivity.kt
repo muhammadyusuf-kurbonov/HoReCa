@@ -24,14 +24,25 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             ProvideWindowInsets {
-                var welcomeScreen by remember { mutableStateOf(true) }
+                var welcomeScreen by remember {
+                    mutableStateOf(
+                        getSharedPreferences("main", 0)
+                            .getBoolean("firstRun", true)
+                    )
+                }
 
                 if (welcomeScreen)
                     WelcomeScreen(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(16.dp),
-                        finishWizard = { welcomeScreen = false }
+                        finishWizard = {
+                            welcomeScreen = false
+                            getSharedPreferences("main", 0)
+                                .edit()
+                                .putBoolean("firstRun", false)
+                                .apply()
+                        }
                     )
                 else
                     AppLayout(

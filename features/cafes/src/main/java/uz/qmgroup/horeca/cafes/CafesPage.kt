@@ -60,7 +60,7 @@ fun CafesPage(
                     shape = RoundedCornerShape(99.dp),
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text(text = "Next")
+                    Text(text = "Finish")
                 }
             }
         }
