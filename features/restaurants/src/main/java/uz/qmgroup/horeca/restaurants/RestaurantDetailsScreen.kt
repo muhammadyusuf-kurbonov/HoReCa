@@ -57,8 +57,9 @@ fun RestaurantDetailsScreen(
                         )
                     }
                 },
-                reviews = listOf(),
-                gotoBooking = gotoBooking
+                comments = listOf(),
+                gotoBooking = gotoBooking,
+                gotoComments = {}
             )
         }
     }

@@ -1,6 +1,7 @@
 package uz.qmgroup.horeca.restaurants
 
 import uz.qmgroup.horeca.common.database.BaseRepository
+import uz.qmgroup.horeca.common.models.Comment
 
 class RestaurantsRepo: BaseRepository<Restaurant> {
     private val items = listOf(
@@ -40,6 +41,14 @@ class RestaurantsRepo: BaseRepository<Restaurant> {
         return items.filter {
             it.title.contains(query) or it.address.contains(query)
         }
+    }
+
+    override suspend fun saveComment(comment: Comment) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getComments(): List<Comment> {
+        TODO("Not yet implemented")
     }
 
 }

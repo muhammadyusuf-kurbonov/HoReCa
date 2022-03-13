@@ -13,7 +13,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import uz.qmgroup.horeca.common.components.DetailsScreen
-import uz.qmgroup.horeca.common.models.Review
 import uz.qmgroup.horeca.common.models.SocialPage
 
 @Composable
@@ -21,7 +20,8 @@ fun CafeDetailsScreen(
     modifier: Modifier = Modifier,
     id: Long,
     cafesViewModel: CafesViewModel = viewModel(),
-    gotoBooking: () -> Unit
+    gotoBooking: () -> Unit,
+    gotoComments: (id: Long) -> Unit
 ) {
     LaunchedEffect(key1 = Unit) {
         cafesViewModel.loadItem(id)
@@ -58,27 +58,11 @@ fun CafeDetailsScreen(
                         )
                     }
                 },
-                reviews = listOf(
-                    Review(
-                        "cafe",
-                        0,
-                        "Sebastian",
-                        "Hallo. Very good place. I want again! And loooooooooooong tooAnd loooooooooooong tooAnd loooooooooooong tooAnd loooooooooooong tooAnd loooooooooooong tooAnd loooooooooooong too"
-                    ),
-                    Review(
-                        "cafe",
-                        0,
-                        "Sebastian",
-                        "Hallo. Very good place. I want again!"
-                    ),
-                    Review(
-                        "cafe",
-                        0,
-                        "Sebastian",
-                        "Hallo. Very good place. I want again!"
-                    ),
-                ),
-                gotoBooking = gotoBooking
+                comments = emptyList(),
+                gotoBooking = gotoBooking,
+                gotoComments = {
+                    gotoComments(id)
+                }
             )
         }
     }

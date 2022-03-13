@@ -6,6 +6,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import uz.qmgroup.horeca.cafes.CafeDetailsScreen
 import uz.qmgroup.horeca.destinations.CafeBookingScreenDestination
+import uz.qmgroup.horeca.destinations.CafeCommentDestination
 
 @Destination
 @Composable
@@ -19,6 +20,9 @@ fun CafeDetails(
         id = id,
         gotoBooking = {
             navigator.navigate(CafeBookingScreenDestination(id))
+        },
+        gotoComments = {
+            navigator.navigate(CafeCommentDestination(id))
         }
     )
 }

@@ -79,8 +79,9 @@ fun HotelDetailsScreen(
                         )
                     }
                 },
-                reviews = listOf(),
-                gotoBooking = gotoBooking
+                comments = listOf(),
+                gotoBooking = gotoBooking,
+                gotoComments = {}
             )
         }
     }

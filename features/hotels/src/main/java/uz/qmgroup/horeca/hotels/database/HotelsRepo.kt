@@ -1,6 +1,7 @@
 package uz.qmgroup.horeca.hotels.database
 
 import uz.qmgroup.horeca.common.database.BaseRepository
+import uz.qmgroup.horeca.common.models.Comment
 import uz.qmgroup.horeca.hotels.Hotel
 
 class HotelsRepo: BaseRepository<Hotel> {
@@ -52,5 +53,13 @@ class HotelsRepo: BaseRepository<Hotel> {
         return items.filter {
             it.title.contains(query) or it.address.contains(query)
         }
+    }
+
+    override suspend fun saveComment(comment: Comment) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getComments(): List<Comment> {
+        TODO("Not yet implemented")
     }
 }

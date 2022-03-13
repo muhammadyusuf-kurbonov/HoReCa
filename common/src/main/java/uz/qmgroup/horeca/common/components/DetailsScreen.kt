@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.outlined.Directions
 import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material.icons.outlined.Phone
@@ -28,7 +29,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import uz.qmgroup.horeca.common.models.Review
+import uz.qmgroup.horeca.common.models.Comment
 import uz.qmgroup.horeca.common.models.SocialPage
 import java.text.DateFormat
 import java.text.NumberFormat
@@ -45,8 +46,9 @@ fun DetailsScreen(
     phone: String? = null,
     socialPages: List<Pair<SocialPage, String>> = emptyList(),
     features: @Composable (ColumnScope.() -> Unit),
-    reviews: List<Review>,
+    comments: List<Comment>,
     gotoBooking: () -> Unit,
+    gotoComments: () -> Unit
 ) {
     LazyColumn(modifier = modifier) {
         item {
@@ -212,19 +214,29 @@ fun DetailsScreen(
             }
         }
         item {
-            Text(
-                text = "Comments",
-                style = MaterialTheme.typography.subtitle1,
-                modifier = Modifier.padding(
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(
                     16.dp, 4.dp
                 ),
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colors.onBackground
-            )
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Comments",
+                    style = MaterialTheme.typography.subtitle1,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colors.onBackground
+                )
+
+                Button(onClick = gotoComments) {
+                    Icon(imageVector = Icons.Default.Edit, contentDescription ="")
+                    Text(text = "New comment")
+                }
+            }
         }
 
-        if (reviews.isNotEmpty()) {
-            items(reviews) {
+        if (comments.isNotEmpty()) {
+            items(comments) {
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
