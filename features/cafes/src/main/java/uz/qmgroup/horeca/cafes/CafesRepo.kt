@@ -11,7 +11,7 @@ class CafesRepo: BaseRepository<Cafe> {
             city = "Tashkent",
             rating = 3.5f,
             stars = 2,
-            imageUrl = "https://scontent.fura3-1.fna.fbcdn.net/v/t39.30808-6/250711322_1342578302828371_1652172121947662843_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=e3f864&_nc_ohc=Q3s6AaWgU4kAX_um2qI&tn=8yHEvfaa0zekyd4_&_nc_ht=scontent.fura3-1.fna&oh=00_AT8R2WZ1rhJ_uYqFlMW2BoDwmtYd-GBANQfvSPsIeKxREw&oe=6220CB00",
+            imageUrl = "https://media-cdn.tripadvisor.com/media/photo-s/10/e5/73/92/photo1jpg.jpg",
             address = "Farg'ona viloyati, Farg'ona shahri, A. Navoiy 32",
             comment = "Hi. Best Restaurant",
             distanceToIt = 5L,
