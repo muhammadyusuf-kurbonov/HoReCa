@@ -1,5 +1,6 @@
 package uz.qmgroup.horeca.common.comments
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -7,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import uz.qmgroup.horeca.common.BaseViewModel
 import uz.qmgroup.horeca.common.models.Comment
+import java.util.*
 
 abstract class BaseCommentsViewModel<E> : BaseViewModel<E>() {
     var rating: Int by mutableStateOf(0)
@@ -20,10 +22,11 @@ abstract class BaseCommentsViewModel<E> : BaseViewModel<E>() {
 
     fun updateRating(rating: Int) {
         this.rating = rating
+        Log.d("Comments", "Rating updated: $rating")
     }
 
     fun updateFullName(name: String) {
-        this.fullName = name
+        this.fullName = name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
     }
 
     fun updatePhone(phone: String) {

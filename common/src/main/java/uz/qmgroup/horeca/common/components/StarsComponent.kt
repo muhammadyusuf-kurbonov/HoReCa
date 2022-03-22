@@ -1,6 +1,5 @@
 package uz.qmgroup.horeca.common.components
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -13,18 +12,11 @@ import androidx.compose.ui.Modifier
 @Composable
 fun StarsComponent(
     modifier: Modifier = Modifier,
-    rating: Int,
-    onClick: ((Int) -> Unit)? = null
+    rating: Int
 ) {
     Row(modifier = modifier) {
         repeat(rating) {
             Icon(
-                modifier = Modifier
-                    .apply {
-                        onClick?.let { onClick ->
-                            clickable { onClick(it + 1) }
-                        }
-                    },
                 imageVector = Icons.Rounded.Star,
                 contentDescription = "",
                 tint = MaterialTheme.colors.primary,
@@ -32,11 +24,6 @@ fun StarsComponent(
         }
         repeat(5 - rating) {
             Icon(
-                modifier = Modifier.apply {
-                    onClick?.let { onClick ->
-                        clickable { onClick(it + 1) }
-                    }
-                },
                 imageVector = Icons.Rounded.StarBorder,
                 contentDescription = "",
                 tint = MaterialTheme.colors.primary
