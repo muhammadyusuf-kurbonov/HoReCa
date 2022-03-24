@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import uz.qmgroup.horeca.destinations.RestaurantBookingScreenDestination
+import uz.qmgroup.horeca.destinations.RestaurantCommentDestination
 import uz.qmgroup.horeca.restaurants.RestaurantDetailsScreen
 
 @Destination
@@ -19,6 +20,9 @@ fun RestaurantDetails(
         id = id,
         gotoBooking = {
             navigator.navigate(RestaurantBookingScreenDestination(id))
+        },
+        gotoComment = {
+            navigator.navigate(RestaurantCommentDestination(id))
         }
     )
 }

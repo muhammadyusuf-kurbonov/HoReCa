@@ -20,7 +20,8 @@ fun RestaurantDetailsScreen(
     modifier: Modifier = Modifier,
     id: Long,
     restaurantsViewModel: RestaurantsViewModel = viewModel(),
-    gotoBooking: () -> Unit
+    gotoBooking: () -> Unit,
+    gotoComment: () -> Unit
 ) {
     LaunchedEffect(key1 = Unit) {
         restaurantsViewModel.loadItem(id)
@@ -59,7 +60,7 @@ fun RestaurantDetailsScreen(
                 },
                 comments = listOf(),
                 gotoBooking = gotoBooking,
-                gotoComments = {}
+                gotoComments = gotoComment
             )
         }
     }

@@ -26,7 +26,8 @@ fun HotelDetailsScreen(
     modifier: Modifier = Modifier,
     id: Long,
     hotelsViewModel: HotelsViewModel = viewModel(),
-    gotoBooking: () -> Unit
+    gotoBooking: () -> Unit,
+    gotoComment: () -> Unit,
 ) {
     LaunchedEffect(key1 = Unit) {
         hotelsViewModel.loadItem(id)
@@ -81,7 +82,7 @@ fun HotelDetailsScreen(
                 },
                 comments = listOf(),
                 gotoBooking = gotoBooking,
-                gotoComments = {}
+                gotoComments = gotoComment
             )
         }
     }
