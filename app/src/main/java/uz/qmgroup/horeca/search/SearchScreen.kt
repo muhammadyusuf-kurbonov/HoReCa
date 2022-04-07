@@ -17,9 +17,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-import uz.qmgroup.horeca.cafes.CafesSearchResults
+import uz.qmgroup.horeca.cafes.components.CafesSearchResults
 import uz.qmgroup.horeca.destinations.*
-import uz.qmgroup.horeca.hotels.HotelsSearchResult
+import uz.qmgroup.horeca.hotels.components.HotelsSearchResult
 import uz.qmgroup.horeca.restaurants.RestaurantsSearchResults
 import uz.qmgroup.horeca.ui.theme.HoReCaTheme
 

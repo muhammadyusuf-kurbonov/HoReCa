@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.cafes
+package uz.qmgroup.horeca.hotels.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -12,13 +12,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import uz.qmgroup.horeca.features.hotels.R
+import uz.qmgroup.horeca.hotels.HotelsTheme
 
 @Composable
-fun CafesPage(
+fun HotelsPage(
     modifier: Modifier = Modifier,
     nextPage: () -> Unit
 ) {
-    CafesTheme {
+    HotelsTheme {
         Box(modifier = modifier) {
             Column(
                 modifier = Modifier
@@ -28,17 +30,17 @@ fun CafesPage(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "CAFES",
+                    text = "HOTELS",
                     style = MaterialTheme.typography.h5,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colors.primary
                 )
                 Image(
-                    painter = painterResource(id = R.drawable.coffee_shop_amico),
-                    contentDescription = "cafes"
+                    painter = painterResource(id = R.drawable.hotel_booking_amico),
+                    contentDescription = "hotels"
                 )
                 Text(
-                    text = "Find cafes with your taste",
+                    text = "Find rooms in hotel near well-known sights and set a maximum price",
                     style = MaterialTheme.typography.subtitle1,
                     textAlign = TextAlign.Center,
                     color = MaterialTheme.colors.onBackground,
@@ -49,7 +51,7 @@ fun CafesPage(
                     LocalContentColor provides MaterialTheme.colors.onBackground
                 ) {
                     Text(
-                        text = "Compare cafes and search by both menu and price",
+                        text = "Keep your hotel search within budget and easily compare hotels",
                         style = MaterialTheme.typography.body1,
                         textAlign = TextAlign.Center
                     )
@@ -60,7 +62,7 @@ fun CafesPage(
                     shape = RoundedCornerShape(99.dp),
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text(text = "Finish")
+                    Text(text = "Next")
                 }
             }
         }

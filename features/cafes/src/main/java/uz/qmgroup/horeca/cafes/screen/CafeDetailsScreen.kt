@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.cafes
+package uz.qmgroup.horeca.cafes.screen
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -12,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
+import uz.qmgroup.horeca.cafes.CafesTheme
+import uz.qmgroup.horeca.cafes.CafesViewModel
 import uz.qmgroup.horeca.common.components.DetailsScreen
 import uz.qmgroup.horeca.common.models.SocialPage
 

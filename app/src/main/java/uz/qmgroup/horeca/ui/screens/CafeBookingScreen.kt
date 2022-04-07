@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.ramcosta.composedestinations.annotation.Destination
-import uz.qmgroup.horeca.cafes.CafeBooking
+import uz.qmgroup.horeca.cafes.screen.CafeBooking
 
 @Destination
 @Composable

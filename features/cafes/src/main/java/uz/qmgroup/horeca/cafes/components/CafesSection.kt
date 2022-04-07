@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.cafes
+package uz.qmgroup.horeca.cafes.components
 
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.items
@@ -7,6 +7,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import uz.qmgroup.horeca.cafes.CafesTheme
+import uz.qmgroup.horeca.cafes.CafesViewModel
 import uz.qmgroup.horeca.common.components.ItemsSection
 
 @Composable

@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.cafes
+package uz.qmgroup.horeca.cafes.screen
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import uz.qmgroup.horeca.cafes.CafesTheme
+import uz.qmgroup.horeca.cafes.CafesViewModel
 import uz.qmgroup.horeca.common.components.BookingScreen
 import uz.qmgroup.horeca.common.components.ButtonsGroup
 

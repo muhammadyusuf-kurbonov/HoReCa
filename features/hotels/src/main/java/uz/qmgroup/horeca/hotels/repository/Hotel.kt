@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.hotels
+package uz.qmgroup.horeca.hotels.repository
 
 import uz.qmgroup.horeca.common.models.BaseObjectModel
 

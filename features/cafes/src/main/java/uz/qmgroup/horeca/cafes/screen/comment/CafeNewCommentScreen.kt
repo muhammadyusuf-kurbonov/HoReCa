@@ -1,23 +1,23 @@
-package uz.qmgroup.horeca.hotels
+package uz.qmgroup.horeca.cafes.screen.comment
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import uz.qmgroup.horeca.cafes.CafesTheme
 import uz.qmgroup.horeca.common.comments.CommentsPage
 
-
 @Composable
-fun HotelNewCommentScreen(
+fun CafeNewCommentScreen(
     modifier: Modifier = Modifier,
     id: Long,
-    hotelCommentsViewModel: HotelCommentsViewModel = viewModel(),
+    cafesCommentViewModel: CafeCommentViewModel = viewModel(),
     cancel: () -> Unit
 ) {
-    HotelsTheme {
+    CafesTheme {
         CommentsPage(
             modifier = modifier,
             id = id,
-            viewModel = hotelCommentsViewModel,
+            viewModel = cafesCommentViewModel,
             cancel = cancel
         )
     }

@@ -6,7 +6,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import uz.qmgroup.horeca.destinations.HomeBookingScreenDestination
 import uz.qmgroup.horeca.destinations.HotelCommentDestination
-import uz.qmgroup.horeca.hotels.HotelDetailsScreen
+import uz.qmgroup.horeca.hotels.screen.HotelDetailsScreen
 
 @Destination
 @Composable

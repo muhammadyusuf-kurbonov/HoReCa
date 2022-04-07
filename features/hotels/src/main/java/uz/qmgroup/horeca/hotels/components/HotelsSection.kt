@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.hotels
+package uz.qmgroup.horeca.hotels.components
 
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.items
@@ -8,7 +8,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import uz.qmgroup.horeca.common.components.ItemsSection
-import uz.qmgroup.horeca.hotels.components.HotelCard
+import uz.qmgroup.horeca.hotels.HotelsTheme
+import uz.qmgroup.horeca.hotels.HotelsViewModel
 
 @Composable
 fun HotelsSection(

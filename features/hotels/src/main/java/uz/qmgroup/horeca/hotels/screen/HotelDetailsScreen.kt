@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.hotels
+package uz.qmgroup.horeca.hotels.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -19,6 +19,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import uz.qmgroup.horeca.common.components.DetailsScreen
 import uz.qmgroup.horeca.common.models.SocialPage
+import uz.qmgroup.horeca.hotels.HotelsTheme
+import uz.qmgroup.horeca.hotels.HotelsViewModel
 import uz.qmgroup.horeca.hotels.components.FeatureIcon
 
 @Composable

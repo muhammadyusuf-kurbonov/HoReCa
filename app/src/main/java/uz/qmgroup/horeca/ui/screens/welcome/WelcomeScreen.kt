@@ -4,8 +4,8 @@ import androidx.compose.animation.*
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import uz.qmgroup.horeca.cafes.CafesPage
-import uz.qmgroup.horeca.hotels.HotelsPage
+import uz.qmgroup.horeca.cafes.screen.CafesPage
+import uz.qmgroup.horeca.hotels.screen.HotelsPage
 import uz.qmgroup.horeca.restaurants.RestaurantsPage
 import uz.qmgroup.horeca.ui.theme.HoReCaTheme
 

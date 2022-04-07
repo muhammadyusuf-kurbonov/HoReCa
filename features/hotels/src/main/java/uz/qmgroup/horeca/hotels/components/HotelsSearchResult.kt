@@ -1,10 +1,10 @@
-package uz.qmgroup.horeca.cafes
+package uz.qmgroup.horeca.hotels.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.LocalCafe
+import androidx.compose.material.icons.outlined.Hotel
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
@@ -12,28 +12,30 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import uz.qmgroup.horeca.common.components.SearchResultsCard
+import uz.qmgroup.horeca.hotels.HotelsTheme
+import uz.qmgroup.horeca.hotels.HotelsViewModel
 
 @Composable
-fun CafesSearchResults(
+fun HotelsSearchResult(
     modifier: Modifier = Modifier,
     searchQuery: String,
     navigateToAll: () -> Unit,
-    navigateToCafe: (Long) -> Unit,
-    cafesViewModel: CafesViewModel = viewModel()
+    navigateToHotel: (Long) -> Unit,
+    hotelsViewModel: HotelsViewModel = viewModel()
 ) {
-    CafesTheme {
+    HotelsTheme {
         SearchResultsCard(
             modifier = modifier,
             searchQuery = searchQuery,
-            viewModel = cafesViewModel,
-            title = "Cafes",
+            viewModel = hotelsViewModel,
+            title = "Hotels",
             navigateToAll = navigateToAll,
             renderItem = {
                 Row(modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { navigateToCafe(it.id) }
+                    .clickable { navigateToHotel(it.id) }
                     .padding(8.dp), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                    Icon(imageVector = Icons.Outlined.LocalCafe, contentDescription = "", tint = MaterialTheme.colors.primary)
+                    Icon(imageVector = Icons.Outlined.Hotel, contentDescription = "", tint = MaterialTheme.colors.primary)
                     Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                         Text(text = it.title, style = MaterialTheme.typography.subtitle1, fontWeight = FontWeight.Bold)
                         CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.disabled) {

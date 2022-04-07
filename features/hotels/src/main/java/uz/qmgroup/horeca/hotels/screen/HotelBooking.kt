@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.hotels
+package uz.qmgroup.horeca.hotels.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import uz.qmgroup.horeca.common.components.BookingScreen
 import uz.qmgroup.horeca.common.components.ButtonsGroup
+import uz.qmgroup.horeca.hotels.HotelsTheme
+import uz.qmgroup.horeca.hotels.HotelsViewModel
 
 
 @Composable

@@ -1,5 +1,6 @@
 package uz.qmgroup.horeca.cafes
 
+import uz.qmgroup.horeca.cafes.repository.Cafe
 import uz.qmgroup.horeca.common.database.BaseRepository
 import uz.qmgroup.horeca.common.models.Comment
 

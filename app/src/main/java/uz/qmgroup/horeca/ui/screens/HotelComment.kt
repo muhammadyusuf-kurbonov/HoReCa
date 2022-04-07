@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import uz.qmgroup.horeca.destinations.HotelDetailsDestination
-import uz.qmgroup.horeca.hotels.HotelNewCommentScreen
+import uz.qmgroup.horeca.hotels.screen.comment.HotelNewCommentScreen
 
 @Destination
 @Composable

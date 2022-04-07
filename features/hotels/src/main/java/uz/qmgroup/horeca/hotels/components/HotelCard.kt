@@ -24,7 +24,7 @@ import coil.compose.rememberImagePainter
 import coil.transform.RoundedCornersTransformation
 import uz.qmgroup.horeca.common.components.ItemCard
 import uz.qmgroup.horeca.features.hotels.R
-import uz.qmgroup.horeca.hotels.Hotel
+import uz.qmgroup.horeca.hotels.repository.Hotel
 import java.text.NumberFormat
 
 @Composable

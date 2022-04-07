@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.cafes
+package uz.qmgroup.horeca.cafes.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
@@ -15,6 +15,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.transform.RoundedCornersTransformation
+import uz.qmgroup.horeca.cafes.R
+import uz.qmgroup.horeca.cafes.repository.Cafe
+import uz.qmgroup.horeca.cafes.repository.Hour
 import uz.qmgroup.horeca.common.components.ItemCard
 import java.text.DateFormat
 import java.util.*

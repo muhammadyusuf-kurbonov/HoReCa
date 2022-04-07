@@ -9,7 +9,7 @@ import uz.qmgroup.horeca.common.components.ItemsScreen
 import uz.qmgroup.horeca.features.hotels.R
 import uz.qmgroup.horeca.hotels.HotelsTheme
 import uz.qmgroup.horeca.hotels.HotelsViewModel
-import uz.qmgroup.horeca.hotels.SortDialog
+import uz.qmgroup.horeca.hotels.components.SortDialog
 import uz.qmgroup.horeca.hotels.components.HotelCard
 
 @Composable

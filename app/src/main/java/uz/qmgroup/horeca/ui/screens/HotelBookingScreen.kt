@@ -3,7 +3,7 @@ package uz.qmgroup.horeca.ui.screens
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.ramcosta.composedestinations.annotation.Destination
-import uz.qmgroup.horeca.hotels.HotelBooking
+import uz.qmgroup.horeca.hotels.screen.HotelBooking
 
 @Destination
 @Composable

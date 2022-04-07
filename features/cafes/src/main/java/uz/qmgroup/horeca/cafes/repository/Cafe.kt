@@ -1,4 +1,4 @@
-package uz.qmgroup.horeca.cafes
+package uz.qmgroup.horeca.cafes.repository
 
 import uz.qmgroup.horeca.common.models.BaseObjectModel
 

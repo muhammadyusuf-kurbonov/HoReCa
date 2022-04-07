@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-import uz.qmgroup.horeca.cafes.CafesScreen
+import uz.qmgroup.horeca.cafes.screen.CafesScreen
 import uz.qmgroup.horeca.destinations.CafeDetailsDestination
 import uz.qmgroup.horeca.destinations.HomeScreenDestination
 

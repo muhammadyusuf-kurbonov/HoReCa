@@ -13,9 +13,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-import uz.qmgroup.horeca.cafes.CafesSection
+import uz.qmgroup.horeca.cafes.components.CafesSection
 import uz.qmgroup.horeca.destinations.*
-import uz.qmgroup.horeca.hotels.HotelsSection
+import uz.qmgroup.horeca.hotels.components.HotelsSection
 import uz.qmgroup.horeca.restaurants.RestaurantsSection
 import uz.qmgroup.horeca.ui.theme.HoReCaTheme
 
